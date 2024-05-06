@@ -1,0 +1,15 @@
+.pro{
+    height: 420px;
+    width: 350px;
+    border-radius: 15px;
+}
+
+.butt{
+    background:    #ff0a54;
+    border-radius: 10px;
+    padding:       10px 25px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal bold 18px "Open Sans", sans-serif; 
+    text-align:    center;
+}
