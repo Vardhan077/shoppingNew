@@ -1,6 +1,7 @@
 import '../styles/navbar.css'
 import { ShoppingBag, UserRound, Shirt,} from 'lucide-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 export default function navbar(){
@@ -11,15 +12,15 @@ export default function navbar(){
             </div>
             <div className="options flex flex-row justify-around">
                 <div className="hover:font-bold hover:text-pink-600 duration-150 item">
-                    <div className='pic mb-1'><a href="/products"><Shirt/></a></div>
+                    <div className='pic mb-1'><Link to="/products"><Shirt/></Link></div>
                     <div><p className='info'>Products</p></div>
                 </div>
                 <div className="hover:font-bold hover:text-pink-600 duration-150 item profile">
-                    <div className='pic mb-1'><a href="/profile"><UserRound/></a></div>
+                    <div className='pic mb-1'><Link to="/profile"><UserRound/></Link></div>
                     <div><p className='info'>Profile</p></div>
                 </div>
                 <div className="hover:font-bold hover:text-pink-600 duration-150 item">
-                    <div className='pic mb-1'><a href="/cart"><ShoppingBag/></a></div>
+                    <div className='pic mb-1'><Link to="/cart"><ShoppingBag/></Link></div>
                     <div><p className='info'>Bag</p></div>
                 </div>
             </div>
