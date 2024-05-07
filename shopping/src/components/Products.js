@@ -4,6 +4,7 @@ import Footer from '../components/footer';
 import '../styles/products.css';
 import Card from './card';
 import axios from 'axios';
+import Cookies from 'js-cookie'
 
 export default function Products({cond=true,query=""}){
     axios.defaults.withCredentials = true;
