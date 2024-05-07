@@ -13,10 +13,14 @@ export default function Profile(){
     const [name,setName] = useState()
     const [email,setEmail] = useState()
     const handleDelete=()=>{
-        Cookies.remove("token")
         axios.get('https://spectre-backend.onrender.com/logout')
         .then(res=>{
-            window.location.reload(true)
+            if(res.data.Status === "Success"){
+                Cookies.remove("token")
+                setAuth(!auth)
+            }
+            console.log(res,'is res from progile')
+            res.send('logged out')
         }).catch(err =>{
             console.log(err)
         } )
