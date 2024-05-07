@@ -4,6 +4,7 @@ import Footer from '../components/footer';
 import '../styles/products.css';
 import Card from './card';
 import axios from 'axios';
+import Cookies from 'js-cookie'
 
 export default function Products({cond=true,query=""}){
     axios.defaults.withCredentials = true;
@@ -19,7 +20,7 @@ export default function Products({cond=true,query=""}){
     };
 
     useEffect(()=>{
-        axios.get('https://spectre-backend.onrender.com')
+        axios.post('https://spectre-backend.onrender.com',{"token":Cookies.get('token')})
         .then(res=>{
             console.log(res.data)
             setName(res.data.name)
