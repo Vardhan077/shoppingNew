@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import one from '../assets/b1.png';
 import two from '../assets/b2.png';
@@ -34,6 +34,10 @@ function App() {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
+
+  useEffect(()=>{
+    let x = setInterval(nextSlide,2000)
+  })
 
   return (
     <div className='max-w h-[500px] w-full m-auto relative group'>
