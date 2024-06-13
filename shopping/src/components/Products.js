@@ -13,6 +13,7 @@ export default function Products({cond=true,query=""}){
     const [name,setName] = useState();
     const [email,setEmail] = useState();
     const [cartitems,setCart] = useState([]);
+    const [isLoading, setIsLoading] = useState([]);
     
     const handleClick = (item) =>{
         setCart([...cartitems,item]);
@@ -20,7 +21,7 @@ export default function Products({cond=true,query=""}){
     };
 
     useEffect(()=>{
-        axios.post('https://spectre-backend.onrender.com',{"token":Cookies.get('token')})
+        axios.get('https://spectre-backend.onrender.com',{"token":Cookies.get('token')})
         .then(res=>{
             console.log(res.data)
             setName(res.data.name)
@@ -33,10 +34,16 @@ export default function Products({cond=true,query=""}){
 
     useEffect(()=>{
         const item = cartitems.slice(-1);
+        // setLoading(true)
         axios.post('https://spectre-backend.onrender.com/add',{item,email})
         .then(res=>{
             console.log(res,'is product');
+        }).catch(err =>{
+            console.log(err)
         })
+        // .finally(() =>{
+        //     setLoading(false)
+        // })
     },[cartitems])
 
 
