@@ -1,7 +1,18 @@
 .new{
-    margin: 0;
+    height: auto;
+    margin-top: 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+.contentContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingContainer{
+    margin-top: 10%;
 }
